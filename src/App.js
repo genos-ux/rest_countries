@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import About from './Components/About'
+import Layout from './Components/Layout';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Contact from './Components/Contact'
+
+
 
 function App() {
+  // const [dark,setDark] = useState(false);
+
+  // function toggle(){
+  //   setDark(prevState => !prevState);
+  // }
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  //  <div style={{backgroundColor: dark?"hsl(207, 26%, 17%)":"white"}}>
+  //    <Nav mode= {toggle} tone={dark}/>
+  //    <Country tone={dark}/>
+  //  </div>
+  <Routes>
+  <Route path='/' element={<Layout/>}/>
+  <Route path='/contact' element={<Contact/>}/>
+  <Route path='/about' element={<About/>}/>
+  
+
+</Routes>
+    
   );
 }
 
